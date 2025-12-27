@@ -17,35 +17,6 @@
 //mouse scroll
 
 / {
-    input_processors {
-        //zip_wheel_scaler: zip_wheel_scaler {
-        //    compatible = "zmk,input-processor-scaler";
-        //    #input-processor-cells = <2>;
-        //    type = <INPUT_EV_REL>;
-        //    codes = <INPUT_REL_WHEEL>;
-        //    track-remainders;
-        //};
-    };
-};
-
-//&msc_input_listener {
-//    speed_up {
-//        layers = <FUNCTION>;
-//        input-processors = <&zip_wheel_scaler 3 1>; //スクロールを3倍速にする
-//    };
-//};
-//
-//&trackball_listener {
-//    scroller {
-//        layers = <SCROLL>;
-//        input-processors =
-//            <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-//            //スクロール方向を逆転,,,,,,,,,,
-//            <&zip_xy_to_scroll_mapper>;
-//    };
-//};
-
-/ {
     combos {
         compatible = "zmk,combos";
 
@@ -64,22 +35,6 @@
             key-positions = <0 1>;
         };
     };
-
-    //    behaviors {
-    //        re_kp: sensor_rotate_kp {
-    //            compatible = "zmk,behavior-sensor-rotate-var";
-    //            #sensor-binding-cells = <2>;
-    //            bindings = <&kp>, <&kp>;
-    //        };
-    //
-    //        mouse_scrl: mouse_wheel_scrl {
-    //            compatible = "zmk,behavior-sensor-rotate-var";
-    //            #sensor-binding-cells = <2>;
-    //            bindings = <&msc>, <&msc>;
-    //
-    //            tap-ms = <20>;
-    //        };
-    //    };
 
     keymap {
         compatible = "zmk,keymap";
