@@ -79,21 +79,21 @@
         };
     };
 
-    behaviors {
-        re_kp: sensor_rotate_kp {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-        };
-
-        mouse_scrl: mouse_wheel_scrl {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&msc>, <&msc>;
-
-            tap-ms = <20>;
-        };
-    };
+//    behaviors {
+//        re_kp: sensor_rotate_kp {
+//            compatible = "zmk,behavior-sensor-rotate-var";
+//            #sensor-binding-cells = <2>;
+//            bindings = <&kp>, <&kp>;
+//        };
+//
+//        mouse_scrl: mouse_wheel_scrl {
+//            compatible = "zmk,behavior-sensor-rotate-var";
+//            #sensor-binding-cells = <2>;
+//            bindings = <&msc>, <&msc>;
+//
+//            tap-ms = <20>;
+//        };
+//    };
 
     keymap {
         compatible = "zmk,keymap";
