@@ -35,6 +35,16 @@
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
         };
+
+        layere2 {
+            bindings = <&mo 2>;
+            key-positions = <24 23>;
+        };
+
+        layer3 {
+            bindings = <&mo 3>;
+            key-positions = <13 14>;
+        };
     };
 
     keymap {
