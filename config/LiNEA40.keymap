@@ -14,7 +14,11 @@
 #define SCROLL 5
 #define WIRELESS 6
 
-//mouse cursol
+&trackball {
+
+    scroll-layers = <3>;
+
+};
 
 &mmv {
     //delay-ms = <20>;
