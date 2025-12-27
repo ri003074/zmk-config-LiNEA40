@@ -45,12 +45,12 @@
 
         layere2 {
             bindings = <&mo 2>;
-            key-positions = <24 23>;
+            key-positions = <34 13>;
         };
 
         layer3 {
             bindings = <&mo 3>;
-            key-positions = <30 31>;
+            key-positions = <34 12>;
         };
     };
 
