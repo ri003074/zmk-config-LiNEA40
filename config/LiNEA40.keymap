@@ -14,12 +14,6 @@
 #define SCROLL 5
 #define WIRELESS 6
 
-&trackball {
-
-    scroll-layers = <3>;
-
-};
-
 &mmv {
     //delay-ms = <20>;
     //trigger-period-ms = <5>;
