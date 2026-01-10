@@ -51,21 +51,6 @@
     };
 };
 
-/ {
-    input_processors {        
-        aml_test: aml_test {
-            compatible = "zmk,input-processor-temp-layer";
-            #input-processor-cells = <2>;
-        };
-    };
-
-};
-
-&trackball_listener {
-    input-processors = <&aml_test 5 10000>;
-};
-
-
 &trackball_listener {
     scroller {
         layers = <SCROLL>;
@@ -74,8 +59,6 @@
             //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
-    //input-processors = <&zip_temp_layer 5 10000>;
-
 };
 
 / {
