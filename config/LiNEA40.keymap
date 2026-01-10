@@ -52,7 +52,11 @@
 };
 
 / {
-    input_processors {
+    input_processors {        
+        aml_test: aml_test {
+            compatible = "zmk,input-processor-temp-layer";
+            #input-processor-cells = <2>;
+        };
     };
 
 };
