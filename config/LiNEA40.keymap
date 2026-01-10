@@ -68,6 +68,8 @@
             //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
+    input-processors = <&zip_temp_layer 5 10000>;
+
 };
 
 / {
