@@ -15,7 +15,22 @@
 #define WIRELESS 6
 
 //mouse cursol
+
+&mmv {
+    delay-ms = <20>;
+    trigger-period-ms = <5>;
+    time-to-max-speed-ms = <100>;
+    acceleration-exponent = <2>;
+};
+
 //mouse scroll
+
+&msc {
+    delay-ms = <3>;
+    trigger-period-ms = <3>;
+    time-to-max-speed-ms = <100>;
+    acceleration-exponent = <0>;
+};
 
 / {
     input_processors {
@@ -36,27 +51,71 @@
     };
 };
 
-/// {
-//    zip_temp_layer {
-//        compatible = "zmk,input-processor-temp-layer";
-//        #input-processor-cells = <2>;
-//        require-prior-idle-ms = <0>;  // 直ぐ動かすなら0、誤爆防止したければ数百msを指定
-//        excluded-positions = <
-//            18  // J の位置
-//            19  // K の位置
-//        >;
-//    };
-//};
-
 &trackball_listener {
     scroller {
         layers = <SCROLL>;
-       // input-processors =　<&zip_temp_layer 5 10000>;
+        input-processors =
+            <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,
+            <&zip_xy_to_scroll_mapper>;
     };
 };
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        ZenkakuHankaku {
+            bindings = <&kp GRAVE>;
+            key-positions = <11 12>;
+        };
+
+        DeleteKey {
+            bindings = <&kp DEL>;
+            key-positions = <7 8>;
+        };
+
+        InsertKey {
+            bindings = <&kp INS>;
+            key-positions = <6 7>;
+        };
+
+        CenterClick {
+            bindings = <&mkp MB3>;
+            key-positions = <17 16>;
+        };
+
+        RightClick {
+            bindings = <&mkp MB2>;
+            key-positions = <18 17>;
+        };
+
+        PrevClick {
+            bindings = <&mkp MB4>;
+            key-positions = <27 28>;
+        };
+
+        ClickNext {
+            bindings = <&mkp MB5>;
+            key-positions = <26 27>;
+        };
+    };
+
+    behaviors {
+        re_kp: sensor_rotate_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        mouse_scrl: mouse_wheel_scrl {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
+
+            tap-ms = <20>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -91,7 +150,7 @@
 &none            &none   &none     &none       &none        &none    &none  &none                     &none             &none                 &none
             >;
 
-            sensor-bindings = <&none>;
+            sensor-bindings = <&re_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
 
         //3
