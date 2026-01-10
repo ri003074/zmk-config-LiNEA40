@@ -51,18 +51,28 @@
     };
 };
 
-&zip_temp_layer {
-    excluded-positions = <
-        18 // J
-        19 // K
-        21 // ;
-        34 // Ctrl
-    >;
+/ {
+    input_processors {
+        aml_temp_layer: aml_temp_layer {
+            compatible = "zmk,input-processor-temp-layer";
+            #input-processor-cells = <2>;
+
+            require-prior-idle-ms = <0>;
+
+            excluded-positions = <
+                18 // J
+                19 // K
+                21 // ;
+                34 // Ctrl
+            >;
+        };
+    };
 };
 
 &trackball_listener {
-    input-processors = <&zip_temp_layer 5 10000>;
+    input-processors = <&aml_temp_layer 5 10000>;
 };
+
 
 &trackball_listener {
     scroller {
