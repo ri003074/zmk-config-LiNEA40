@@ -36,17 +36,17 @@
     };
 };
 
-/ {
-    zip_temp_layer {
-        compatible = "zmk,input-processor-temp-layer";
-        #input-processor-cells = <2>;
-        require-prior-idle-ms = <0>;  // 直ぐ動かすなら0、誤爆防止したければ数百msを指定
-        excluded-positions = <
-            18  // J の位置
-            19  // K の位置
-        >;
-    };
-};
+/// {
+//    zip_temp_layer {
+//        compatible = "zmk,input-processor-temp-layer";
+//        #input-processor-cells = <2>;
+//        require-prior-idle-ms = <0>;  // 直ぐ動かすなら0、誤爆防止したければ数百msを指定
+//        excluded-positions = <
+//            18  // J の位置
+//            19  // K の位置
+//        >;
+//    };
+//};
 
 &trackball_listener {
     scroller {
