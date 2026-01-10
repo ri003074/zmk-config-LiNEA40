@@ -24,6 +24,10 @@
     };
 };
 
+studio_unlock: studio_unlock {
+    compatible = "zmk,behavior-studio-unlock";
+};
+
 / {
     combos {
         compatible = "zmk,combos";
