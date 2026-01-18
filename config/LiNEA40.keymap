@@ -15,6 +15,11 @@
 #define SCROLL 5
 #define WIRELESS 6
 
+
+&mt {
+    tapping-term-ms = <200>; // This is the value already set by default
+};
+
 //mouse cursol
 
 &mmv {
