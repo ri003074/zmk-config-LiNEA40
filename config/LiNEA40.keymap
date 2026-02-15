@@ -15,11 +15,6 @@
 #define SCROLL 5
 #define WIRELESS 6
 
-&trackball {
-    scroll-layers = <3>;
-};
-
-
 
 &mt {
     tapping-term-ms = <200>; // This is the value already set by default
@@ -31,8 +26,6 @@
     time-to-max-speed-ms = <100>;
     acceleration-exponent = <2>;
 };
-
-//mouse scroll
 
 &msc {
     delay-ms = <3>;
