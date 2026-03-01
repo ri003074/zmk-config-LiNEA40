@@ -9,7 +9,7 @@
 #     artifact-name: corne_central
 
 include:
-  - board: seeeduino_xiao_ble
+  - board: seeed_xiao_ble
     shield: LiNEA40_left rgbled_adapter
   - board: seeed_xiao_ble
     shield: LiNEA40_right rgbled_adapter
